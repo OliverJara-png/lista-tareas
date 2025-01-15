@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Todo List App</title>
+</head>
+<body>
+  <div class="wrapper">
+    <!-- Encabezado -->
+    <div class="screen-backdrop"></div>
+    <div class="head-wrapper">
+      <div class="welcome">
+        <div>
+          <h1>Bienvenido!</h1>
+          <p>Aqui tienes una lista de actividades.</p>
+        </div>
+        <div class="img">
+          <div class="backdrop"></div>
+          <img src="images/boy.png" alt="Profile" />
+        </div>
+      </div>
+    </div>
+    <!-- Categorías -->
+    <div class="categories-wrapper">
+      <!-- Los elementos de categoría serán renderizados dinámicamente por script.js -->
+    </div>
+    <!-- Pantalla de Categoría -->
+    <div class="screen category-screen">
+      <div class="head-wrapper">
+        <span class="back-btn" id="back-btn">&larr; Regresar</span>
+        <div class="category-details">
+          <img src="images/shopping.png" alt="Category" id="category-img" />
+          <div class="details">
+            <h2 id="category-title">Shopping</h2>
+            <p id="num-tasks">0 tasks</p>
+          </div>
+        </div>
+        <div class="options">
+          <button class="add-task-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 6v6m6 0h-6m0 0H6m6 0v6m0-6V6"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="tasks-wrapper">
+        <!-- Aquí se renderizan las tareas -->
+      </div>
+    </div>
+  </div>
+  <!-- Formulario para agregar tarea -->
+  <div class="add-task">
+    <div class="heading">Add Task</div>
+    <div class="input-group">
+      <label for="task-input">Task</label>
+      <input type="text" id="task-input" placeholder="Enter your task" />
+    </div>
+    <div class="input-group">
+      <label for="category-select">Category</label>
+      <select id="category-select">
+        <!-- Opciones de categoría -->
+      </select>
+    </div>
+    <div class="btns">
+      <button class="cancel-btn">Cancel</button>
+      <button class="add-btn">Add</button>
+    </div>
+    <div class="add-task-backdrop"></div>
+  </div>
+  <div class="black-backdrop"></div>
+  <script src="js/script.js"></script>
+  <script>
+    const backToCategories = () => {
+      document.querySelector('.wrapper').classList.remove('show-category');
+    };
+
+    document.getElementById('back-btn').addEventListener('click', backToCategories);
+  </script>
+</body>
+</html>
